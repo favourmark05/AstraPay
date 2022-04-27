@@ -154,7 +154,7 @@ export default {
       try {
         const res = await this.$axios.delete(`/marketers/${marketer.username}`)
         this.getMarketers()
-        console.log(res)
+        alert('Marketer Deleted Successfully', res)
       } catch (error) {
         console.log(error)
       }
