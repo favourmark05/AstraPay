@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import dashBoard from '../components/DashBoard/dashBoard.vue'
 import createMarketers from '../components/DashBoard/createMarketers.vue'
 import editMarketers from '../components/DashBoard/editMarketers.vue'
+import marketerInfo from '../components/DashBoard/marketerInfo.vue'
 // import store from '../store'
 
 Vue.use(VueRouter)
@@ -44,6 +45,11 @@ const routes = [
         path: '/editMarketers',
         name: 'editMarketers',
         component: editMarketers
+      },
+      {
+        path: '/marketerInfo/:marketing_consultant_id',
+        name: 'marketerInfo',
+        component: marketerInfo
       }
     ]
   }

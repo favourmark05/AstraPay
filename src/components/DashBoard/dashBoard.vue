@@ -12,7 +12,7 @@
       <div class="bg">
         <nav class="navbar navbar-expand-lg border-bottom navbar-light">
           <i class="fa-solid fa-bars pr-4 text-danger"></i>
-          <a class="navbar-brand" href="#">PEER COVER</a>
+          <router-link to="/dashBoard" class="navbar-brand admin">PEER COVER</router-link>
           <button
             class="navbar-toggler"
             type="button"
@@ -73,14 +73,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="text-center" v-for="marketer in marketerSearch" :key="marketer.ID">
-                  <!-- <th scope="row"> {{ index }} </th> -->
+                <tr class="text-center " v-for="marketer in marketerSearch" :key="marketer.ID" >
+                  <!-- <router-link :to="{ name: 'marketerInfo', params: { marketing_consultant_id: marketer.marketing_consultant_id }}"> -->
                   <td> {{ marketer.name }} </td>
                   <td> {{ marketer.email }} </td>
                   <td>{{ marketer.phonenumber }}</td>
                   <td>{{ marketer.username }}</td>
-                  <td><i class="fa-solid fa-trash text-danger" @click.prevent="deleteMarketer(marketer)"></i></td>
-                  <td><i class="fa-solid fa-greater-than text-danger"></i></td>
+                  <td><i class="fa-solid fa-trash text-danger" @click.prevent="deleteMarketer(marketer)" title="Delete Marketer " data-toggle="tooltip" data-placement="top"></i></td>
+                  <td><router-link :to="{ name: 'marketerInfo', params: { marketing_consultant_id: marketer.marketing_consultant_id }}">
+                    <i class="fa-solid fa-greater-than text-danger" title="View Marketer Information" data-toggle="tooltip" data-placement="top"></i>
+                    </router-link></td>
+                  <!-- </router-link> -->
                 </tr>
               </tbody>
             </table>
@@ -134,6 +137,9 @@ export default {
     },
     checkUser (User) {
       this.$router.push('/editMarketers', User)
+    },
+    getImage (images) {
+      return images[0]
     },
     async getMarketers () {
       try {
