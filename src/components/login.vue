@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm bg-success d-flex">
         <div class="container m-auto text-white">
-          <h6>PEERCOVER</h6>
+          <h6>PEER-COVER</h6>
           <h6>CAR <br />INSURANCE</h6>
           <h6>
             Price From <br />
